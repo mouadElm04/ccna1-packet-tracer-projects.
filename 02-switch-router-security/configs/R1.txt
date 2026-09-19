@@ -1,0 +1,17 @@
+enable
+configure terminal
+ip domain-name ccna.local
+username admin secret Admin123
+crypto key generate rsa modulus 1024
+ip ssh version 2
+login block-for 60 attempts 3 within 30
+line vty 0 4
+ login local
+ transport input ssh
+ exec-timeout 5 0
+ exit
+line console 0
+ exec-timeout 5 0
+ logging synchronous
+ end
+copy running-config startup-config

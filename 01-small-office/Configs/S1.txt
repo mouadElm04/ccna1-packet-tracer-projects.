@@ -1,0 +1,22 @@
+enable
+configure terminal
+hostname S1
+no ip domain-lookup
+enable secret Cisco123
+service password-encryption
+banner motd #Authorized Access Only#
+line console 0
+ password cisco
+ login
+ exit
+line vty 0 15
+ password cisco
+ login
+ exit
+interface vlan 1
+ ip address 192.168.10.2 255.255.255.0
+ no shutdown
+ exit
+ip default-gateway 192.168.10.1
+end
+copy running-config startup-config

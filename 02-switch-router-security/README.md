@@ -1,6 +1,6 @@
 # Project 2: Switch and Router Security
 
-**Status:** Planned
+**Status:** Completed
 
 ## Objective
 Secure a small office network by hardening the router and the switch:

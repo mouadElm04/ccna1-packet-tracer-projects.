@@ -1,0 +1,29 @@
+enable
+configure terminal
+ip domain-name ccna.local
+username admin secret Admin123
+crypto key generate rsa modulus 1024
+ip ssh version 2
+line vty 0 15
+ login local
+ transport input ssh
+ exec-timeout 5 0
+ exit
+line console 0
+ exec-timeout 5 0
+ logging synchronous
+ exit
+interface range f0/2 - 4
+ switchport mode access
+ switchport port-security
+ switchport port-security maximum 1
+ switchport port-security mac-address sticky
+ switchport port-security violation shutdown
+ exit
+interface range f0/5 - 24
+ shutdown
+ exit
+interface range g0/1 - 2
+ shutdown
+ end
+copy running-config startup-config

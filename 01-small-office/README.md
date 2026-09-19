@@ -7,7 +7,7 @@ Build a small office LAN with one router, one switch and three PCs,
 using both IPv4 and IPv6 (dual-stack).
 
 ## Topology
-(screenshot will be added)
+in the screenshot 
 
 ## Addressing Table
 | Device | IPv4 | IPv6 |

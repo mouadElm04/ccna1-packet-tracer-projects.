@@ -1,6 +1,6 @@
 # Project 1: Small Office Network (Dual-Stack)
 
-**Status:** In progress
+**Status:** Completed
 
 ## Objective
 Build a small office LAN with one router, one switch and three PCs,

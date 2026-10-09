@@ -1,0 +1,28 @@
+enable
+configure terminal
+hostname R2
+no ip domain-lookup
+enable secret cisco
+service password-encryption
+banner motd #Authorized Access Only#
+line console 0
+ password cisco
+ login
+ exit
+line vty 0 4
+ password cisco
+ login
+ exit
+interface g0/0
+ description LAN2
+ ip address 192.168.60.1 255.255.255.0
+ no shutdown
+ exit
+interface g0/1
+ description Link to R1
+ ip address 10.0.0.2 255.255.255.252
+ no shutdown
+ exit
+ip route 192.168.50.0 255.255.255.0 10.0.0.1
+end
+copy running-config startup-config
